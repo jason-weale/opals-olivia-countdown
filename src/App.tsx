@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import type { CSSProperties } from 'react';
 
 const EVENT_TIME = new Date('2026-10-22T19:30:00-04:00');
 const EVENT_DATE_IN_MONTREAL = '2026-10-22';
@@ -66,27 +67,46 @@ function App() {
     { label: 'Minutes', value: pad(timeLeft.minutes) },
     { label: 'Seconds', value: pad(timeLeft.seconds) },
   ];
+  const fireworkStyles = [
+    { left: '8%', height: '58vh', size: '5.4rem', drift: '-14px', duration: '4.2s', delay: '-0.5s' },
+    { left: '19%', height: '70vh', size: '7rem', drift: '18px', duration: '5.4s', delay: '-2.8s' },
+    { left: '32%', height: '49vh', size: '4.8rem', drift: '-10px', duration: '4.7s', delay: '-1.6s' },
+    { left: '45%', height: '76vh', size: '8rem', drift: '8px', duration: '6s', delay: '-4.3s' },
+    { left: '58%', height: '61vh', size: '5.8rem', drift: '-20px', duration: '4.9s', delay: '-0.9s' },
+    { left: '71%', height: '82vh', size: '6.8rem', drift: '14px', duration: '5.8s', delay: '-3.5s' },
+    { left: '84%', height: '55vh', size: '5.2rem', drift: '-8px', duration: '4.4s', delay: '-2.1s' },
+    { left: '94%', height: '68vh', size: '6.2rem', drift: '-18px', duration: '5.2s', delay: '-5.1s' },
+  ];
 
   return (
     <main className="app-shell" aria-labelledby="app-title">
       <div className="spotlights" aria-hidden="true">
         <span className="spotlight spotlight-one" />
         <span className="spotlight spotlight-two" />
+        <span className="spotlight spotlight-three" />
+        <span className="spotlight spotlight-four" />
       </div>
 
       <div className="fireworks" aria-hidden="true">
-        <span className="firework firework-one">
-          <span className="rocket" />
-          <span className="burst" />
-        </span>
-        <span className="firework firework-two">
-          <span className="rocket" />
-          <span className="burst" />
-        </span>
-        <span className="firework firework-three">
-          <span className="rocket" />
-          <span className="burst" />
-        </span>
+        {fireworkStyles.map((style, index) => (
+          <span
+            className="firework"
+            key={style.left}
+            style={
+              {
+                '--firework-left': style.left,
+                '--firework-height': style.height,
+                '--firework-size': style.size,
+                '--firework-drift': style.drift,
+                '--firework-duration': style.duration,
+                '--firework-delay': style.delay,
+              } as CSSProperties
+            }
+          >
+            <span className="rocket" />
+            <span className={`burst burst-${(index % 3) + 1}`} />
+          </span>
+        ))}
       </div>
 
       <div className="sparkle-field" aria-hidden="true">

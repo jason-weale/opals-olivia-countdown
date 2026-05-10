@@ -69,6 +69,12 @@ function App() {
 
   return (
     <main className="app-shell" aria-labelledby="app-title">
+      <div className="fireworks" aria-hidden="true">
+        <span className="firework firework-one" />
+        <span className="firework firework-two" />
+        <span className="firework firework-three" />
+      </div>
+
       <div className="sparkle-field" aria-hidden="true">
         <span />
         <span />
@@ -102,7 +108,21 @@ function App() {
           ))}
         </div>
 
-        <p className="footer-note">Purple sparkle mode is officially on.</p>
+        <div className="luna-scene" aria-label="Luna the black cat is guarding the countdown">
+          <div className="cat-luna" aria-hidden="true">
+            <div className="cat-tail" />
+            <div className="cat-body" />
+            <div className="cat-head">
+              <span className="cat-ear left-ear" />
+              <span className="cat-ear right-ear" />
+              <span className="cat-eye left-eye" />
+              <span className="cat-eye right-eye" />
+            </div>
+          </div>
+          <p>Luna is guarding the countdown until concert night.</p>
+        </div>
+
+        <p className="footer-note">Deep purple sparkle mode is officially on.</p>
       </section>
     </main>
   );

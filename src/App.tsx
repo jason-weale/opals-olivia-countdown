@@ -69,10 +69,24 @@ function App() {
 
   return (
     <main className="app-shell" aria-labelledby="app-title">
+      <div className="spotlights" aria-hidden="true">
+        <span className="spotlight spotlight-one" />
+        <span className="spotlight spotlight-two" />
+      </div>
+
       <div className="fireworks" aria-hidden="true">
-        <span className="firework firework-one" />
-        <span className="firework firework-two" />
-        <span className="firework firework-three" />
+        <span className="firework firework-one">
+          <span className="rocket" />
+          <span className="burst" />
+        </span>
+        <span className="firework firework-two">
+          <span className="rocket" />
+          <span className="burst" />
+        </span>
+        <span className="firework firework-three">
+          <span className="rocket" />
+          <span className="burst" />
+        </span>
       </div>
 
       <div className="sparkle-field" aria-hidden="true">

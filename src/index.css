@@ -253,6 +253,74 @@ select {
   transform: translateX(-50%) rotate(12deg);
 }
 
+.paw-burst {
+  background: none;
+  filter: drop-shadow(0 0 18px rgba(255, 209, 102, 0.72));
+  mask-image: none;
+}
+
+.paw-burst::before,
+.paw-burst::after {
+  position: absolute;
+  inset: 11%;
+  border: 2px solid rgba(255, 209, 102, 0.5);
+  border-radius: 999px;
+  content: "";
+  opacity: 0.55;
+}
+
+.paw-burst::after {
+  inset: 2%;
+  border-color: rgba(255, 79, 184, 0.34);
+  transform: rotate(18deg);
+}
+
+.paw-pad,
+.paw-toe {
+  position: absolute;
+  display: block;
+  background: linear-gradient(135deg, #ffd166, #ff9ed5);
+  box-shadow:
+    0 0 12px rgba(255, 209, 102, 0.7),
+    0 0 24px rgba(255, 79, 184, 0.28);
+}
+
+.paw-pad {
+  left: 35%;
+  top: 46%;
+  width: 30%;
+  height: 27%;
+  border-radius: 48% 48% 55% 55%;
+}
+
+.paw-toe {
+  width: 17%;
+  height: 19%;
+  border-radius: 999px;
+}
+
+.toe-one {
+  left: 21%;
+  top: 30%;
+  transform: rotate(-24deg);
+}
+
+.toe-two {
+  left: 36%;
+  top: 19%;
+}
+
+.toe-three {
+  right: 36%;
+  top: 19%;
+}
+
+.toe-four {
+  right: 21%;
+  top: 30%;
+  transform: rotate(24deg);
+}
+
 .sparkle-field {
   position: absolute;
   inset: 0;

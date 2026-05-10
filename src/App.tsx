@@ -69,13 +69,13 @@ function App() {
   ];
   const fireworkStyles = [
     { left: '8%', height: '58vh', size: '5.4rem', drift: '-14px', duration: '4.2s', delay: '-0.5s' },
-    { left: '19%', height: '70vh', size: '7rem', drift: '18px', duration: '5.4s', delay: '-2.8s' },
+    { left: '19%', height: '92vh', size: '7rem', drift: '18px', duration: '5.4s', delay: '-2.8s' },
     { left: '32%', height: '49vh', size: '4.8rem', drift: '-10px', duration: '4.7s', delay: '-1.6s' },
     { left: '45%', height: '76vh', size: '8rem', drift: '8px', duration: '6s', delay: '-4.3s' },
     { left: '58%', height: '61vh', size: '5.8rem', drift: '-20px', duration: '4.9s', delay: '-0.9s' },
-    { left: '71%', height: '82vh', size: '6.8rem', drift: '14px', duration: '5.8s', delay: '-3.5s' },
+    { left: '71%', height: '96vh', size: '6.8rem', drift: '14px', duration: '5.8s', delay: '-3.5s' },
     { left: '84%', height: '55vh', size: '5.2rem', drift: '-8px', duration: '4.4s', delay: '-2.1s' },
-    { left: '94%', height: '68vh', size: '6.2rem', drift: '-18px', duration: '5.2s', delay: '-5.1s' },
+    { left: '94%', height: '86vh', size: '6.2rem', drift: '-18px', duration: '5.2s', delay: '-5.1s' },
   ];
 
   return (
@@ -104,7 +104,17 @@ function App() {
             }
           >
             <span className="rocket" />
-            <span className={`burst burst-${(index % 3) + 1}`} />
+            <span className={`burst burst-${(index % 3) + 1} ${index === 2 || index === 6 ? 'paw-burst' : ''}`}>
+              {(index === 2 || index === 6) && (
+                <>
+                  <span className="paw-pad" />
+                  <span className="paw-toe toe-one" />
+                  <span className="paw-toe toe-two" />
+                  <span className="paw-toe toe-three" />
+                  <span className="paw-toe toe-four" />
+                </>
+              )}
+            </span>
           </span>
         ))}
       </div>

@@ -1,0 +1,25 @@
+{
+  "name": "Opal’s Olivia Rodrigo Countdown",
+  "short_name": "Opal Countdown",
+  "description": "A sparkling countdown to Olivia Rodrigo in Montréal for Opal.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#1d102f",
+  "theme_color": "#7d2cff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

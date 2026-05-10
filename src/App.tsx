@@ -115,7 +115,7 @@ function App() {
 
         <div className="countdown-grid" aria-label="Live countdown to the concert">
           {countdownItems.map((item) => (
-            <div className="time-tile" key={item.label}>
+            <div className={`time-tile time-tile-${item.label.toLowerCase()}`} key={item.label}>
               <strong>{item.value}</strong>
               <span>{item.label}</span>
             </div>

@@ -416,11 +416,13 @@ h1 {
 
 .time-tile {
   display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   min-height: 100px;
   place-items: center;
+  min-width: 0;
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 8px;
-  padding: 12px 6px;
+  padding: 12px 8px;
   background:
     linear-gradient(180deg, rgba(255, 209, 102, 0.13), rgba(255, 79, 184, 0.08)),
     rgba(255, 255, 255, 0.11);
@@ -430,14 +432,20 @@ h1 {
 }
 
 .time-tile strong {
+  max-width: 100%;
   color: white;
   font-size: clamp(2rem, 13vw, 3.1rem);
   line-height: 1;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0;
+  overflow: hidden;
   text-shadow:
     0 2px 0 rgba(255, 209, 102, 0.22),
     0 4px 18px rgba(58, 0, 83, 0.5);
+}
+
+.time-tile-days strong {
+  font-size: clamp(1.75rem, 10vw, 2.55rem);
 }
 
 .time-tile span {

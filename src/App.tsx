@@ -67,6 +67,12 @@ function App() {
     { label: 'Minutes', value: pad(timeLeft.minutes) },
     { label: 'Seconds', value: pad(timeLeft.seconds) },
   ];
+  const playoffSeries = [
+    { matchup: 'Montréal vs Buffalo', status: 'Series tied 2-2' },
+    { matchup: 'Carolina vs Philadelphia', status: 'Carolina wins 4-0' },
+    { matchup: 'Colorado vs Minnesota', status: 'Colorado leads 3-1' },
+    { matchup: 'Vegas vs Anaheim', status: 'Vegas leads 3-2' },
+  ];
   const fireworkStyles = [
     { left: '8%', height: '58vh', size: '5.4rem', drift: '-14px', duration: '4.2s', delay: '-0.5s' },
     { left: '19%', height: '92vh', size: '7rem', drift: '18px', duration: '5.4s', delay: '-2.8s' },
@@ -128,46 +134,67 @@ function App() {
         <span />
       </div>
 
-      <section className="countdown-card">
-        <p className="eyebrow">For Opal</p>
-        <h1 id="app-title">Opal’s Olivia Rodrigo Countdown</h1>
-        <p className="event-line">October 22, 2026 · 7:30 PM · Montréal</p>
+      <div className="content-stack">
+        <section className="countdown-card">
+          <p className="eyebrow">For Opal</p>
+          <h1 id="app-title">Opal’s Olivia Rodrigo Countdown</h1>
+          <p className="event-line">October 22, 2026 · 7:30 PM · Montréal</p>
 
-        <div className="record-orbit" aria-hidden="true">
-          <div className="record">
-            <div className="record-center">OR</div>
-          </div>
-          <div className="orbit-star star-one" />
-          <div className="orbit-star star-two" />
-        </div>
-
-        <p className="message">{message}</p>
-
-        <div className="countdown-grid" aria-label="Live countdown to the concert">
-          {countdownItems.map((item) => (
-            <div className={`time-tile time-tile-${item.label.toLowerCase()}`} key={item.label}>
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
+          <div className="record-orbit" aria-hidden="true">
+            <div className="record">
+              <div className="record-center">OR</div>
             </div>
-          ))}
-        </div>
+            <div className="orbit-star star-one" />
+            <div className="orbit-star star-two" />
+          </div>
 
-        <div className="luna-scene" aria-label="Luna the black cat is guarding the countdown">
-          <div className="cat-luna" aria-hidden="true">
-            <div className="cat-tail" />
-            <div className="cat-body" />
-            <div className="cat-head">
-              <span className="cat-ear left-ear" />
-              <span className="cat-ear right-ear" />
-              <span className="cat-eye left-eye" />
-              <span className="cat-eye right-eye" />
+          <p className="message">{message}</p>
+
+          <div className="countdown-grid" aria-label="Live countdown to the concert">
+            {countdownItems.map((item) => (
+              <div className={`time-tile time-tile-${item.label.toLowerCase()}`} key={item.label}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="luna-scene" aria-label="Luna the black cat is guarding the countdown">
+            <div className="cat-luna" aria-hidden="true">
+              <div className="cat-tail" />
+              <div className="cat-body" />
+              <div className="cat-head">
+                <span className="cat-ear left-ear" />
+                <span className="cat-ear right-ear" />
+                <span className="cat-eye left-eye" />
+                <span className="cat-eye right-eye" />
+              </div>
+            </div>
+            <p>Luna is guarding the countdown until concert night.</p>
+          </div>
+
+          <p className="footer-note">Deep purple sparkle mode is officially on.</p>
+        </section>
+
+        <aside className="hockey-corner" aria-label="Opal's hockey corner with Stanley Cup playoff series">
+          <div className="hockey-heading">
+            <span className="puck" aria-hidden="true" />
+            <div>
+              <p>Opal’s Hockey Corner</p>
+              <h2>Stanley Cup Playoffs</h2>
             </div>
           </div>
-          <p>Luna is guarding the countdown until concert night.</p>
-        </div>
-
-        <p className="footer-note">Deep purple sparkle mode is officially on.</p>
-      </section>
+          <div className="series-list">
+            {playoffSeries.map((series) => (
+              <div className="series-row" key={series.matchup}>
+                <span>{series.matchup}</span>
+                <strong>{series.status}</strong>
+              </div>
+            ))}
+          </div>
+          <p className="hockey-note">Round 2 · updated May 13</p>
+        </aside>
+      </div>
     </main>
   );
 }

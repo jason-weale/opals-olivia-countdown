@@ -378,10 +378,18 @@ select {
   animation-delay: -1.8s;
 }
 
-.countdown-card {
+.content-stack {
   position: relative;
   z-index: 1;
+  display: grid;
   width: min(100%, 430px);
+  gap: 12px;
+}
+
+.countdown-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 8px;
@@ -567,6 +575,120 @@ h1 {
   color: rgba(255, 247, 255, 0.82);
   font-size: 0.94rem;
   font-weight: 700;
+}
+
+.hockey-corner {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(180, 232, 255, 0.28);
+  border-radius: 8px;
+  padding: 12px;
+  background:
+    linear-gradient(135deg, rgba(12, 31, 58, 0.78), rgba(43, 15, 72, 0.7)),
+    rgba(5, 12, 25, 0.72);
+  box-shadow:
+    0 20px 48px rgba(6, 2, 18, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+}
+
+.hockey-corner::before {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 49%, rgba(180, 232, 255, 0.18) 49% 51%, transparent 51%),
+    repeating-linear-gradient(0deg, transparent 0 18px, rgba(255, 255, 255, 0.04) 18px 19px);
+  content: "";
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.hockey-heading,
+.series-list,
+.hockey-note {
+  position: relative;
+  z-index: 1;
+}
+
+.hockey-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  text-align: left;
+}
+
+.hockey-heading p,
+.hockey-heading h2,
+.hockey-note {
+  margin: 0;
+}
+
+.hockey-heading p {
+  color: #b9efff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hockey-heading h2 {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.puck {
+  display: block;
+  width: 34px;
+  height: 22px;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 34%, rgba(255, 255, 255, 0.22), transparent 18%),
+    #0a0911;
+  box-shadow:
+    0 0 16px rgba(180, 232, 255, 0.34),
+    inset 0 -5px 0 rgba(255, 255, 255, 0.06);
+}
+
+.series-list {
+  display: grid;
+  gap: 7px;
+}
+
+.series-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 7px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 247, 255, 0.9);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.series-row span {
+  min-width: 0;
+}
+
+.series-row strong {
+  color: #ffe9a5;
+  font-size: 0.72rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.hockey-note {
+  margin-top: 9px;
+  color: rgba(255, 247, 255, 0.66);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-align: right;
 }
 
 .luna-scene {
